@@ -1,1 +1,34 @@
-8
+module.exports = function(grunt) {
+
+grunt.initConfig({
+copy: {
+main: {
+files: [
+{expand: true, cwd: 'bower_components/angular/', src: ['angular.min.js', 'angular.min.js.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/angular-route/', src: ['angular-route.min.js', 'angular-route.min.js.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/angular-resource/', src: ['angular-resource.min.js', 'angular-resource.min.js.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/angular-animate/', src: ['angular-animate.min.js', 'angular-animate.min.js.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/angular-bootstrap/', src: ['ui-bootstrap-tpls.min.js'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/angular-cookies/', src: ['angular-cookies.min.js', 'angular-cookies.min.js.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/jquery/dist/', src: ['jquery.min.js', 'jquery.min.map', 'jquery.js'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/underscore/', src: ['underscore-min.js', 'underscore-min.map'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/bootstrap/dist/js/', src: ['bootstrap.min.js'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: 'htdocs/site-versions/dev/assets/fonts/'},
+{expand: true, cwd: 'bower_components/bootstrap/dist/css/', src: ['bootstrap.min.css'], dest: 'htdocs/site-versions/dev/assets/css/'},
+{expand: true, cwd: 'bower_components/components-font-awesome/css/', src: ['font-awesome.min.css'], dest: 'htdocs/site-versions/dev/assets/css/'},
+{expand: true, cwd: 'bower_components/components-font-awesome/fonts/', src: ['*'], dest: 'htdocs/site-versions/dev/assets/fonts/'},
+{expand: true, cwd: 'bower_components/typeahead.js/dist/', src: ['typeahead.bundle.min.js'], dest: 'htdocs/site-versions/dev/assets/js/'},
+{expand: true, cwd: 'bower_components/tg-angular-validator/dist/', src: ['angular-validator.min.js'], dest: 'htdocs/site-versions/dev/assets/js'},
+{expand: true, cwd: 'bower_components/angular-input-modified/dist/', src: ['angular-input-modified.min.js'], dest: 'htdocs/site-versions/dev/assets/js'},
+{expand: true, cwd: 'bower_components/isteven-angular-multiselect/', src: ['isteven-multi-select.js'], dest: 'htdocs/site-versions/dev/assets/js'},
+{expand: true, cwd: 'bower_components/isteven-angular-multiselect/', src: ['isteven-multi-select.css'], dest: 'htdocs/site-versions/dev/assets/css'}
+]
+}
+}
+});
+
+grunt.loadNpmTasks('grunt-contrib-copy');
+
+grunt.registerTask('default', ['copy']);
+};
+
